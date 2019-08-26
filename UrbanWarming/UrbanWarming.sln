@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UW.API.Test", "UW.API.Test\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UW.BusinessLogic.Test", "UW.BusinessLogic.Test\UW.BusinessLogic.Test.csproj", "{ECE95CDF-B5A2-44CB-A3CA-D1058964055D}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "UW.Database", "UW.Database\UW.Database.sqlproj", "{E926EC9A-F939-4A79-9B4F-7628C54433C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,12 @@ Global
 		{ECE95CDF-B5A2-44CB-A3CA-D1058964055D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECE95CDF-B5A2-44CB-A3CA-D1058964055D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECE95CDF-B5A2-44CB-A3CA-D1058964055D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E926EC9A-F939-4A79-9B4F-7628C54433C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E926EC9A-F939-4A79-9B4F-7628C54433C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E926EC9A-F939-4A79-9B4F-7628C54433C4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E926EC9A-F939-4A79-9B4F-7628C54433C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E926EC9A-F939-4A79-9B4F-7628C54433C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E926EC9A-F939-4A79-9B4F-7628C54433C4}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +88,7 @@ Global
 		{908D4DED-2ED9-40A6-AD1A-2227CF01788D} = {2B4782AE-C218-41BC-B042-4935F57EDD7B}
 		{828C82C6-8164-4CDB-909E-475E747250E8} = {FF567E14-3A76-4424-B98E-15FA5CDA5010}
 		{ECE95CDF-B5A2-44CB-A3CA-D1058964055D} = {FF567E14-3A76-4424-B98E-15FA5CDA5010}
+		{E926EC9A-F939-4A79-9B4F-7628C54433C4} = {FF567E14-3A76-4424-B98E-15FA5CDA5010}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BB63834B-553B-4F18-9D17-4D1881748122}

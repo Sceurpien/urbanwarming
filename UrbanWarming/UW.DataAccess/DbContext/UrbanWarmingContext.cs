@@ -14,7 +14,7 @@ namespace UW.DataAccess
         {
             //var appSettingsJson = AppSettingsJson.GetAppSettings();
             //this.ConnectionString = appSettingsJson["MssqlConnectionString"];
-            this.ConnectionString = "Server=museiondbserver.database.windows.net;Database=MuseionDatabase;User Id=museionadmin;Password=fdsf/%/=6niu;Pooling=true";
+            this.ConnectionString = "Server=localhost;Database=UW_Local;User Id=uw_user;Password=urbanwarming;Pooling=true";
         }
 
         public UrbanWarmingContext(string connectionString)

@@ -20,11 +20,23 @@ namespace UW.AuthAPI
             Configuration = configuration;
         }
 
+        readonly string UWSpecificOrigins = "_uwAllowSpecificOrigins";
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(UWSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("*");
+                });
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -41,6 +53,7 @@ namespace UW.AuthAPI
                 app.UseHsts();
             }
 
+            app.UseCors(UWSpecificOrigins);
             app.UseHttpsRedirection();
             app.UseMvc();
         }

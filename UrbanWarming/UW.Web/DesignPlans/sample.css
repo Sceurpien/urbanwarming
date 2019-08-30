@@ -1,0 +1,24 @@
+@import url("headline.css");
+@import url("login.css");
+
+@font-face {
+    font-family: 'burliweh_sansnormal';
+    src: url('burliweh_sans-webfont.woff2') format('woff2'),
+         url('burliweh_sans-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	width: 100%; 
+	text-align: center; 
+	/* background-image: radial-gradient(circle, #79d91a, #00cc6d, #00b99b, #00a2af, #0388a6); */
+	background-color: #FFFFFF;
+	margin: 0px;
+	margin-top: 100px;
+	padding: 0px;
+}
+
+.main {
+	margin-top: 100px;
+}

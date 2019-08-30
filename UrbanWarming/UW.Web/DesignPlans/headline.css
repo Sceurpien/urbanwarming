@@ -1,0 +1,36 @@
+.headline {
+	width: 100%;
+	position: absolute;
+	height: 100px;
+	padding: 0px;
+	margin: 0px;
+	top: 0px;
+	background-color: #0388A6;
+	text-align: left;
+	font-family: 'burliweh_sansnormal';
+	color: #FFFFFF;
+	z-index: 10;
+}
+
+.headline-bottom {
+	background-color: #488C03;
+	border-color: #458907;
+	border-width: 0px;
+	border-style: none;
+	border-top-style: solid;
+	border-top-width: 1px;
+	width: 100%;
+	position: absolute;
+	height: 37px;
+	padding: 0px;
+	margin: 0px;
+	top: 63px;
+	text-align: left;
+	z-index: 11;
+}
+
+.headline-logo {
+	z-index: 100;
+	position: absolute;
+	top: 0px;
+}

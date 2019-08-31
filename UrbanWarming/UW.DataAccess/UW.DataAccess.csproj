@@ -5,14 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DAL\Get\" />
     <Folder Include="DAL\Import\" />
-    <Folder Include="DAL\Delete\" />
-    <Folder Include="DAL\Insert\" />
     <Folder Include="DAL\Search\" />
     <Folder Include="DAL\Update\" />
-    <Folder Include="Entities\" />
-    <Folder Include="DTOs\" />
   </ItemGroup>
 
   <ItemGroup>

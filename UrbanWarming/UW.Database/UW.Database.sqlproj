@@ -62,5 +62,8 @@
   <ItemGroup>
     <Build Include="Files\201908251545_InitialGeneration.sql" />
     <Build Include="ProgressiveGeneration.sql" />
+    <Build Include="Files\201908301509_GetUserById.sql" />
+    <Build Include="Files\201908301734_InsertUser.sql" />
+    <Build Include="Files\201908301908_DeleteUser.sql" />
   </ItemGroup>
 </Project>

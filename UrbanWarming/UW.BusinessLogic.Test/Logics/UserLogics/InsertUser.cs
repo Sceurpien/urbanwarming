@@ -24,6 +24,7 @@ namespace UW.BusinessLogic.Test
             UserDTO user = new UserDTO("duplicate", "username", "email", "picture", "description", 1);
             UserLogics.InsertUser(user);
             var result = UserLogics.InsertUser(user);
+            UserLogics.DeleteUser("duplicate");
             Assert.AreEqual(false, result);
         }
     }

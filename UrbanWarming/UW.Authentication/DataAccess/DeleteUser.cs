@@ -10,18 +10,18 @@ namespace UW.Authentication
 {
     public partial class DataAccess
     {
-        public async static Task<string> AddUser(User user)
+        public async static Task<bool> DeleteUser(string id)
         {
             try
             {
                 var dbContext = new DbContext();
-                await dbContext.Users.InsertOneAsync(user);
+                await dbContext.Users.DeleteOneAsync(x => x.Id == id);
             }
             catch (Exception e)
             {
-                return null;
+                return false;
             }
-            return user.Id;
+            return true;
         }
     }
 }

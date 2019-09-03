@@ -66,5 +66,6 @@
     <Build Include="Files\201908301734_InsertUser.sql" />
     <Build Include="Files\201908301908_DeleteUser.sql" />
     <Build Include="Files\201909012120_GetUserByName.sql" />
+    <Build Include="Files\201909032138_GetUserByEmail.sql" />
   </ItemGroup>
 </Project>

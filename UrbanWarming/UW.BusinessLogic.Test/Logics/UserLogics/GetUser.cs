@@ -12,11 +12,12 @@ namespace UW.BusinessLogic.Test
     {
         private const string userName = "1234567890qwertzuiop";
         private const string userId = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private const string userEmail = "1234567890qwertzuiop@email.com";
 
         [TestInitialize]
         public void TestInitialize()
         {
-            UserDTO user1 = new UserDTO(userId, userName, "email3", "picture1", "description1", 1);
+            UserDTO user1 = new UserDTO(userId, userName, userEmail, "picture1", "description1", 1);
             var result1 = UserLogics.InsertUser(user1);
         }
 
@@ -37,7 +38,35 @@ namespace UW.BusinessLogic.Test
         public void GetUserByName_UserNotExist_Invalid()
         {
             UserDTO result = UserLogics.GetUserByName("xxxxxxxxxxxxxxxxqqqwwwzzzzyyyyyyyyyy");
-            Assert.AreEqual(null, result);
+            Assert.IsNull(result);
+        }
+
+        [TestMethod]
+        public void GetUserByEmail_UserExists_Success()
+        {
+            UserDTO result = UserLogics.GetUserByEmail(userEmail);
+            Assert.AreEqual(result.Id, userId);
+        }
+
+        [TestMethod]
+        public void GetUserByEmail_UserNotExist_Invalid()
+        {
+            UserDTO result = UserLogics.GetUserByEmail("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            Assert.IsNull(result);
+        }
+
+        [TestMethod]
+        public void GetUserById_UserExists_Success()
+        {
+            UserDTO result = UserLogics.GetUserById(userId);
+            Assert.AreEqual(result.Id, userId);
+        }
+
+        [TestMethod]
+        public void GetUserById_UserNotExists_Invalid()
+        {
+            UserDTO result = UserLogics.GetUserById("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            Assert.IsNull(result);
         }
     }
 }

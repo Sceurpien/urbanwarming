@@ -38,7 +38,7 @@ namespace UW.BusinessLogic.Test
         public void GetUserByName_UserNotExist_Invalid()
         {
             UserDTO result = UserLogics.GetUserByName("xxxxxxxxxxxxxxxxqqqwwwzzzzyyyyyyyyyy");
-            Assert.AreEqual(null, result);
+            Assert.IsNull(result);
         }
 
         [TestMethod]
@@ -52,7 +52,21 @@ namespace UW.BusinessLogic.Test
         public void GetUserByEmail_UserNotExist_Invalid()
         {
             UserDTO result = UserLogics.GetUserByEmail("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-            Assert.AreEqual(null, result);
+            Assert.IsNull(result);
+        }
+
+        [TestMethod]
+        public void GetUserById_UserExists_Success()
+        {
+            UserDTO result = UserLogics.GetUserById(userId);
+            Assert.AreEqual(result.Id, userId);
+        }
+
+        [TestMethod]
+        public void GetUserById_UserNotExists_Invalid()
+        {
+            UserDTO result = UserLogics.GetUserById("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            Assert.IsNull(result);
         }
     }
 }

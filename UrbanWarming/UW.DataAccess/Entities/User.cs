@@ -1,9 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace UW.DataAccess.Entities
+﻿namespace UW.DataAccess.Entities
 {
     public class User
     {

@@ -11,11 +11,18 @@ namespace UW.Authentication.Logics
     {
         public static string Login(string userName, string password)
         {
-            User user = DataAccess.GetUser(userName).Result;
+            try
+            {
+                User user = DataAccess.GetUser(userName).Result;
 
-            if (!ConfirmPassword(password, Encoding.Unicode.GetBytes(user.HashedPassword), user.Salt))
-                return null;
-            return CreateJwtToken(CreateJwtForLogin(user).ToString());
+                if (!ConfirmPassword(password, Encoding.Unicode.GetBytes(user.HashedPassword), user.Salt))
+                    return null;
+                return CreateJwtToken(CreateJwtForLogin(user).ToString());
+            }
+            catch
+            {
+                return "";
+            }
         }
 
         public static Jwt CreateJwtForLogin(User user)

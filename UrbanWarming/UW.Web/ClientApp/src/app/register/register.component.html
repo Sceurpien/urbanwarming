@@ -1,0 +1,14 @@
+
+<div>
+  <form (ngSubmit)="onRegisterPost()">
+
+    <input type="text" name="loginname" [(ngModel)]="loginname" ng-trim="false" placeholder="User name" />
+
+    <input type="text" name="email" [(ngModel)]="email" ng-trim="false" placeholder="Email" />
+
+    <input type="password" name="password" [(ngModel)]="password" ng-trim="false" placeholder="Password" />
+
+    <input type="submit" value="Login" />
+
+  </form>
+</div>

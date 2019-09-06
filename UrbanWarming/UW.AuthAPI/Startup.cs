@@ -33,7 +33,7 @@ namespace UW.AuthAPI
                 options.AddPolicy(UWSpecificOrigins,
                 builder =>
                 {
-                    builder.WithOrigins("*");
+                    builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
                 });
             });
 

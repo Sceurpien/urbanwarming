@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace UW.DataAccess.Entities
+﻿namespace UW.DataAccess.Entities
 {
     public class CityType
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string OfficialName { get; set; }
         public string FictionalName { get; set; }
@@ -17,7 +13,7 @@ namespace UW.DataAccess.Entities
         public string Description { get; set; }
 
 
-        public CityType(string id, string name, string officialName, string fictionalName, string region, bool seaConnection, bool roadConnection, string difficulty, string description)
+        public CityType(int id, string name, string officialName, string fictionalName, string region, bool seaConnection, bool roadConnection, string difficulty, string description)
         {
             Id = id;
             Name = name;

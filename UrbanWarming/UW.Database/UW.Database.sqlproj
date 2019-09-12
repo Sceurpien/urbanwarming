@@ -69,5 +69,6 @@
     <Build Include="Files\201909032138_GetUserByEmail.sql" />
     <Build Include="Files\201909042102_GetCityTypes.sql" />
     <Build Include="Files\201909102109_GetCityByUserId.sql" />
+    <Build Include="Files\201909122148_GetCitiesByUserId.sql" />
   </ItemGroup>
 </Project>

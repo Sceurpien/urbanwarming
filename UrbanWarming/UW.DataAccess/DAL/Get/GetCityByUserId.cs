@@ -35,6 +35,11 @@ namespace UW.DataAccess.DAL
                 return null;
             }
 
+            return GetCityFromDataRow(row);
+        }
+
+        private City GetCityFromDataRow(DataRow row)
+        {
             Location location = new Location(
                 Convert.ToInt32(row["LocationId"].ToString()),
                 Convert.ToDouble(row["Longitude"].ToString()),
@@ -53,5 +58,6 @@ namespace UW.DataAccess.DAL
 
             return city;
         }
+
     }
 }

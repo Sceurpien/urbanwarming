@@ -1,16 +1,19 @@
-﻿using UW.BusinessLogic.DTOs;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UW.BusinessLogic.DTOs;
 using UW.DataAccess.DAL;
 
 namespace UW.BusinessLogic.Logics
 {
     public partial class CityLogics
     {
-        public static CityDTO GetCityByUserId(string userId)
+        public static IEnumerable<CityDTO> GetCitiesByUserId(string userId)
         {
             try
             {
                 UWDataAccess da = new UWDataAccess();
-                return new CityDTO(da.GetCityByUserId(userId));
+
+                return da.GetCitiesForUserId(userId).Select(city => new CityDTO(city));
             }
             catch
             {

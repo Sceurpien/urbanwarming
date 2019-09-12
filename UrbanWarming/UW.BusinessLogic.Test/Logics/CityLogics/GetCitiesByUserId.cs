@@ -5,7 +5,7 @@ using UW.BusinessLogic.Logics;
 namespace UW.BusinessLogic.Test
 {
     [TestClass]
-    public class GetCityByUserId
+    public class GetCitiesByUserId
     {
         //TODO: write tests
     }

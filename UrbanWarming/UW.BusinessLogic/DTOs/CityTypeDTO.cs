@@ -4,7 +4,7 @@ namespace UW.BusinessLogic.DTOs
 {
     public class CityTypeDTO
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string OfficialName { get; set; }
         public string FictionalName { get; set; }
@@ -14,7 +14,7 @@ namespace UW.BusinessLogic.DTOs
         public string Difficulty { get; set; }
         public string Description { get; set; }
 
-        public CityTypeDTO(string id, string name, string officialName, string fictionalName, string region, bool seaConnection, bool roadConnection, string difficulty, string description)
+        public CityTypeDTO(int id, string name, string officialName, string fictionalName, string region, bool seaConnection, bool roadConnection, string difficulty, string description)
         {
             Id = id;
             Name = name;

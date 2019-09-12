@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Text;
 using UW.DataAccess.Entities;
 
 namespace UW.DataAccess.DAL
@@ -28,22 +27,29 @@ namespace UW.DataAccess.DAL
 
             foreach (DataRow row in dt.Rows)
             {
-                CityType type = new CityType(
-                        row["Id"].ToString(),
-                        row["Name"].ToString(),
-                        row["OfficialName"].ToString(),
-                        row["FictionalName"].ToString(),
-                        row["Region"].ToString(),
-                        Convert.ToBoolean(row["SeaConnection"].ToString()),
-                        Convert.ToBoolean(row["RoadConnection"].ToString()),
-                        row["Difficulty"].ToString(),
-                        row["Description"].ToString()
-                    );
+                CityType type = ConvertDataRowToCityType(row, "Id");
 
                 cityTypes.Add(type);
             }
 
             return cityTypes;
+        }
+
+        private CityType ConvertDataRowToCityType(DataRow row, string idColumnName)
+        {
+            CityType type = new CityType(
+                Convert.ToInt32(row[idColumnName].ToString()),
+                row["Name"].ToString(),
+                row["OfficialName"].ToString(),
+                row["FictionalName"].ToString(),
+                row["Region"].ToString(),
+                Convert.ToBoolean(row["SeaConnection"].ToString()),
+                Convert.ToBoolean(row["RoadConnection"].ToString()),
+                row["Difficulty"].ToString(),
+                row["Description"].ToString()
+            );
+
+            return type;
         }
 
     }

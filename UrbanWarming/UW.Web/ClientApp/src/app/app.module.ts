@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 import { SettingsService } from './setting/settings.service';
 import { ApiUrlInterceptor } from './setting/api-url.interceptor';
@@ -24,7 +25,8 @@ import { ApiUrlInterceptor } from './setting/api-url.interceptor';
     CounterComponent,
     FetchDataComponent,
 
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +38,7 @@ import { ApiUrlInterceptor } from './setting/api-url.interceptor';
       { path: 'fetch-data', component: FetchDataComponent },
 
       { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent }
     ])
   ],
   providers: [

@@ -13,13 +13,13 @@ namespace UW.Authentication.Logics
         {
             try
             {
-                User user = DataAccess.GetUser(userName).Result;
+                User user = DataAccess.GetUserByName(userName).Result;
 
                 if (!ConfirmPassword(password, Encoding.Unicode.GetBytes(user.HashedPassword), user.Salt))
                     return null;
                 return CreateJwtToken(CreateJwtForLogin(user).ToString());
             }
-            catch
+            catch (Exception e)
             {
                 return "";
             }

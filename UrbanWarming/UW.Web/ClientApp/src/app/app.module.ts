@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 
 import { SettingsService } from './setting/settings.service';
 import { ApiUrlInterceptor } from './setting/api-url.interceptor';
+import { BaseComponent } from './base/base.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ApiUrlInterceptor } from './setting/api-url.interceptor';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', component: BaseComponent, pathMatch: 'full' },
+      { path: 'home', component: HomeComponent},
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
 

@@ -22,6 +22,9 @@ export class RegisterComponent {
     this.email = '';
     this.password = '';
     this.citytype = '';
+
+    if (localStorage.getItem('jwt') != undefined)
+      window.location.href = baseUrl + 'home/';
   }
 
   onRegisterPost() {

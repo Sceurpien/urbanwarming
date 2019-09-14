@@ -36,7 +36,7 @@ export class LoginComponent {
       else {
         localStorage.setItem('jwt', result);
         let token = this.getDecodedAccessToken(result);
-        window.location.href = this.baseurl + 'home/';
+        window.location.href = this.baseurl + 'city/';
       }
     }, error => {
       console.error(error)

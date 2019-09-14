@@ -18,6 +18,9 @@ export class LoginComponent {
     this.err = false;
     this.loginname = '';
     this.password = '';
+
+    if (localStorage.getItem('jwt') != undefined)
+      window.location.href = baseUrl + 'city/';
   }
 
   onLoginPost() {

@@ -16,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import { SettingsService } from './setting/settings.service';
 import { ApiUrlInterceptor } from './setting/api-url.interceptor';
 import { BaseComponent } from './base/base.component';
+import { CityComponent } from './city/city.component';
 
 
 @NgModule({
@@ -23,11 +24,12 @@ import { BaseComponent } from './base/base.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
-
+    CityComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+
+    CounterComponent,
+    FetchDataComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,6 +40,7 @@ import { BaseComponent } from './base/base.component';
       { path: 'home', component: HomeComponent},
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'city', component: CityComponent },
 
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent }

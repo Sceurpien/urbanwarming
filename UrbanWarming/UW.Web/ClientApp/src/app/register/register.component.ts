@@ -24,7 +24,7 @@ export class RegisterComponent {
     this.citytype = '';
 
     if (localStorage.getItem('jwt') != undefined)
-      window.location.href = baseUrl + 'home/';
+      window.location.href = baseUrl + 'city/';
   }
 
   onRegisterPost() {

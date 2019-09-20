@@ -23,6 +23,7 @@ import { CityComponent } from './city/city.component';
   declarations: [
     AppComponent,
     NavMenuComponent,
+    BaseComponent,
     HomeComponent,
     CityComponent,
     LoginComponent,

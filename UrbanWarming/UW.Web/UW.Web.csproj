@@ -25,7 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="DesignPlans\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\style.css" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

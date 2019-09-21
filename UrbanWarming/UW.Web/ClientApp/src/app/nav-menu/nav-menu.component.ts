@@ -15,7 +15,7 @@ export class NavMenuComponent {
 
   constructor(@Inject('BASE_URL') baseUrl: string, @Inject(DOCUMENT) private document: Document) {
     if (this.document.location.href.toLowerCase() == baseUrl.toLowerCase()) {
-      this.isNotAutoDirect = false;
+      this.isNotAutoDirect = true;
     }
 
     if (localStorage.getItem('jwt') == undefined)

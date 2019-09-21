@@ -1,8 +1,103 @@
 body {
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
+    background-color: #f3fdff !important;
+}
+
+a {
+    color: #aee239 !important;
+    font-style: normal;
+    cursor: pointer !important;
+}
+
+a:hover {
+    color: #00a8c6 !important;
+    font-style: normal;
+    cursor: pointer !important;
+}
+
+input[type=text], input[type=number], input[type=password], select {
+    height: 40px;
+    background-color: #f3fdff;
+    border-style: none;
+    border-bottom-style: solid;
+    border-color: #00a8c6;
+    font-family: Montserrat;
+    font-size: 16px;
+    color: #454545;
+    padding: 10px;
+}
+
+input[type=submit], button {
+    height: 40px;
+    background-color: #cbec81;
+    border-style: none;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-stretch: normal;
+    color: #ffffff;
+    padding: 10px;
 }
 
 .content {
     padding-top: 120px;
+    z-index: 1;
+}
+
+.login, .register {
+    width: 320px;
+    height: 480px;
+    margin: 50px auto;
+    border-radius: 2px;
+    box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+}
+
+.login-header-image {
+    width: 320px;
+    padding: 0px;
+    margin: 0px;
+    z-index: 3;
+}
+
+.login-header {
+    width: 320px;
+    height: 160px;
+    opacity: 0.72;
+    background-image: linear-gradient(to bottom, #cbec81, #40c0cb);
+    z-index: 4;
+    margin-top: -160px;
+}
+
+.login-header-text {
+    width: 320px;
+    height: 40px;
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 4px;
+    padding-top: 120px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 10 !important;
+    opacity: 1 !important;
+}
+
+.login-input-bracket {
+    width: 100%;
+    padding: 20px;
+}
+
+.login-input-bracket-text {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+.login-input {
+    width: 100%;
 }

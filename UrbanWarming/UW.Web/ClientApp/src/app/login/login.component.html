@@ -1,12 +1,34 @@
 
-<div>
-  <form (ngSubmit)="onLoginPost()">
+  <div class="login">
+    <img class="login-header-image" src="uwlogo.svg" />
+    <div class="login-header">
+      <div class="login-header-text">Urban Warming</div>
+    </div>
+    
 
-    <input type="text" name="loginname" [(ngModel)]="loginname" ng-trim="false" placeholder="User name" />
+    <form (ngSubmit)="onLoginPost()">
 
-    <input type="password" name="password" [(ngModel)]="password" ng-trim="false" placeholder="Password" />
+      <div class="login-input-bracket">
+        <input class="login-input" type="text" name="loginname" [(ngModel)]="loginname" ng-trim="false" placeholder="User name" />
+      </div>
 
-    <input type="submit" value="Login" />
+      <div class="login-input-bracket">
+        <input class="login-input" type="password" name="password" [(ngModel)]="password" ng-trim="false" placeholder="Password" />
+      </div>
 
-  </form>
-</div>
+      <div class="login-input-bracket">
+        <input class="login-input" type="submit" value="Log in" />
+      </div>
+
+      <div class="login-input-bracket-text">
+        Don't have an account? <a [routerLink]='["/register"]'>Sign up</a>
+      </div>
+
+      <div class="login-input-bracket-text">
+        Forgot password? <a [routerLink]='["/fpass"]'>Reset</a>
+      </div>
+
+    </form>
+
+  </div>
+

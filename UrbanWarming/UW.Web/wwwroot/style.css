@@ -38,11 +38,19 @@ input[type=submit], button {
     font-stretch: normal;
     color: #ffffff;
     padding: 10px;
+    cursor: pointer;
 }
 
 .content {
     padding-top: 120px;
     z-index: 1;
+}
+
+.loading {
+    width: 6%;
+    margin-left: 47%;
+    margin-top: 20%;
+    z-index: 10;
 }
 
 .login, .register {
@@ -59,6 +67,7 @@ input[type=submit], button {
     padding: 0px;
     margin: 0px;
     z-index: 3;
+    cursor: default;
 }
 
 .login-header {
@@ -68,6 +77,7 @@ input[type=submit], button {
     background-image: linear-gradient(to bottom, #cbec81, #40c0cb);
     z-index: 4;
     margin-top: -160px;
+    cursor: default;
 }
 
 .login-header-text {
@@ -81,7 +91,7 @@ input[type=submit], button {
     font-stretch: normal;
     letter-spacing: 4px;
     padding-top: 120px;
-    cursor: pointer;
+    cursor: default;
     text-align: center;
     z-index: 10 !important;
     opacity: 1 !important;

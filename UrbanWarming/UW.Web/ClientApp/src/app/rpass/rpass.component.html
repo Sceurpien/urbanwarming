@@ -1,0 +1,34 @@
+
+  <div class="login">
+    <img class="login-header-image" src="uwlogo.svg" />
+    <div class="login-header">
+      <div class="login-header-text">Urban Warming</div>
+    </div>
+
+    <form (ngSubmit)="onResetPasswordPost()">
+
+      <div class="login-input-bracket">
+        <input class="login-input" type="password" name="password1" [(ngModel)]="password1" ng-trim="false" placeholder="Password" />
+      </div>
+
+      <div class="login-input-bracket">
+        <input class="login-input" type="password" name="password2" [(ngModel)]="password2" ng-trim="false" placeholder="Password confirm" />
+      </div>
+
+      <div class="login-input-bracket">
+        <input class="login-input" type="submit" value="Reset Password" />
+      </div>
+
+      <div class="login-input-bracket-text">
+        I remember my password! <a [routerLink]='["/login"]'>Login</a>
+      </div>
+
+      <div class="login-input-bracket-text">
+        Don't have an account? <a [routerLink]='["/register"]'>Sign up</a>
+      </div>
+
+    </form>
+
+
+  </div>
+

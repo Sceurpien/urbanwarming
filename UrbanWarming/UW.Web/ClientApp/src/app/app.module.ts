@@ -18,6 +18,8 @@ import { SettingsService } from './setting/settings.service';
 import { ApiUrlInterceptor } from './setting/api-url.interceptor';
 import { BaseComponent } from './base/base.component';
 import { CityComponent } from './city/city.component';
+import { ForgotPasswordComponent } from './fpass/fpass.component';
+import { ResetPasswordComponent } from './rpass/rpass.component';
 
 
 @NgModule({
@@ -27,8 +29,11 @@ import { CityComponent } from './city/city.component';
     BaseComponent,
     HomeComponent,
     CityComponent,
+
     LoginComponent,
     RegisterComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
 
     CounterComponent,
     FetchDataComponent
@@ -46,7 +51,9 @@ import { CityComponent } from './city/city.component';
       { path: 'city', component: CityComponent },
 
       { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent }
+      { path: 'register', component: RegisterComponent },
+      { path: 'fpass', component: ForgotPasswordComponent },
+      { path: 'rpass/:token', component: ResetPasswordComponent }
     ])
   ],
   providers: [

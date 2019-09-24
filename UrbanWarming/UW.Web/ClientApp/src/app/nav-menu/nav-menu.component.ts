@@ -14,9 +14,7 @@ export class NavMenuComponent {
   public isNotAutoDirect: boolean = true;
 
   constructor(@Inject('BASE_URL') baseUrl: string, @Inject(DOCUMENT) private document: Document) {
-    if (this.document.location.href.toLowerCase() == baseUrl.toLowerCase()) {
-      this.isNotAutoDirect = true;
-    }
+    this.isNotAutoDirect = true;
 
     if (localStorage.getItem('jwt') == undefined)
       this.isLoggedIn = false;

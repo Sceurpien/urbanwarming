@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+/*
+    -------------------
+    - Reg form kód
+    -------------------
+*/
+
+form input {
+    width: 100%;
+    height: 35px;
+    background-color: #F3FDFF;
+    border: none;
+    border-bottom: 1px solid #8BD7E5;
+    margin-bottom: 20px;
+    padding: 2px 4px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: rgba(73, 73, 73, 0.6);
+    letter-spacing: 1px;
+}
+
+form input:focus {
+    outline: none;
+}
+
+form input[type=text] {
+    margin-bottom: 30px;
+}
+
+#pass2 {
+    margin-bottom: 30px;
+}
+
+/* 
+    -------------------
+    - Legördülő menü kód
+    -------------------
+*/
+
+form select {
+    width: 75%;
+    height: 35px;
+}
+
+form select {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: rgba(73, 73, 73, 0.6);
+    letter-spacing: 1px;
+    border: none;
+    border-bottom: 1px solid #8BD7E5;
+    width: 100%;
+    padding: 2px 6px;
+}
+
+form select:hover {
+    background-color: #F3FDFF;
+}
+
+form select:focus {
+    outline: none;
+}
+
+form select option {
+    background-color: white;
+    margin: 20px 4px;
+}
+
+form select option.hidden-option {
+    display: none;
+}
+
+/* 
+-------------------
+- Animációk
+-------------------
+*/
+
+.slideUp {
+    animation-name: slide-up;
+    animation-duration: 1s;
+}
+
+.slideDown {
+    animation-name: slide-down;
+    animation-duration: 1s;
+}
+
+@keyframes slide-up {
+    0% {
+        height: 0px;
+        /*
+        opacity: 0;
+        transform: translate(0, 80%);
+        */
+    }
+    100% {
+        height: 100%;
+        /*
+        opacity: 1;
+        transform: translate(0, 0);
+        */
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        height: 100%;
+        /*
+        opacity: 1;
+        transform: translate(0, 0);
+        */
+    }
+    100% {
+        height: 0px;
+        /*
+        opacity: 0;
+        transform: translate(0, 80%);
+        */
+    }
+}
+
+/* Sry a rendezetlenségért */
+
+body {
+    background-color: #F3FDFF;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: rgba(73, 73, 73, 0.6);
+}
+
+a {
+    color: #9FCE34;
+    font-size: 18px;
+}
+
+a:hover {
+    color: #8FB92F;
+}
+
+a:visited {
+    color: #40C0CB;
+}
+
+div#box {
+    margin: 50px auto;
+    width: 400px;
+    min-height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+div.left-arrow {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+a#back {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 25px;
+}
+
+.h1 {
+    font-family: Montserrat;
+    color: rgba(73, 73, 73, 0.8);
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.h4 {
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 18px;
+    color: rgba(73, 73, 73, 0.9);
+    margin-top: 40px;
+}
+
+div#gradient {
+    border-radius: 8px 8px 0 0;
+    height: 120px;
+    background-image: linear-gradient(rgba(249, 248, 247, 0.8), rgba(64, 192, 203, 0.4));
+}
+
+.content {
+    padding: 20px 40px;
+}
+
+.difficulty-hard {
+    color: #FE4A49;
+}
+
+.description img {
+    height: 18px;
+    margin-right: 10px;
+}
+
+.description-text {
+    margin-bottom: 40px;
+}
+
+.button {
+    display: block;
+    height: 35px;
+    width: 100%;
+    text-decoration: none;
+    background-color: #BCE75D;
+    color: white;
+    line-height: 35px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #9FCE34
+}
+
+.button:visited {
+    color: white;
+}
+
+#login {
+    text-align: center;
+}
+
+.content1{
+    position: absolute;
+}
+
+.content2{
+    background-color: white;
+    position: absolute;
+    overflow: hidden;
+}

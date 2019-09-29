@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UW - Registration</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="box">
+        <div id="gradient"></div>
+
+        <div class="content content1">
+            <h1 class="h1">Registration</h1>
+            
+            <form action="">
+                <input type="text" name="Email" id="email" placeholder="Email">
+                <input type="password" name="password1" id="pass1" placeholder="Password">
+                <input type="password" name="password2" id="pass2" placeholder="Confirm Passworm">
+            </form>
+            <a class="button button-next" href="#">Next</a>
+
+            <p id="login">Already have an account ? <a href="#">Login</a></p>
+        </div>
+
+        <div class="content content2" style="display: none;">
+            <a href="#" id="back">
+                <div class="left-arrow"></div> back
+            </a>
+            <h1 class="h1">Choose your city</h1>
+            <form>
+                <select name="city-type" required>
+                    <option value="city-type-1" class="hidden-option">Select your city type</option>
+                    <option disabled></option>
+                    <option value="city-type-2">City Type 2</option>
+                    <option value="city-type-3">City Type 3</option>
+                    <option value="city-type-4">City Type 4</option>
+                </select>
+            </form>
+
+            <p> Difficulty: <span class="difficulty-hard">HARD</span></p>
+
+            <h4 class="h4">Description</h4>
+            <div class="description">
+                <img src="big-anchor.svg" alt="City with a port" title="City with a sea connection">  
+                <img src="railway.svg" alt="City with a road connection" title="City with a road connection">
+            </div>
+            <p class="description-text">This is a short description of the type of city you choose.</p>
+
+            <a class="button button-next" href="#">Next</a>
+            <p id="login">Already have an account ? <a href="#">Login</a></p>
+        </div><!-- content -->
+
+    </div> <!-- box -->
+
+    <script>
+        // Code handleing Animation classes
+        let content1 = document.querySelector(".content1");
+        let content2 = document.querySelector(".content2");
+
+        document.querySelector(".content1 .button-next").addEventListener("click", function(){
+            content2.style.display = "block";
+
+            content2.classList.add("slideUp");
+
+            setTimeout(function(){
+                content2.classList.remove("slideUP");
+                content1.style.display = "none";
+            }, 1000);
+        });
+
+        document.querySelector("#back").addEventListener("click", function(){
+            content1.style.display= "block";
+            
+            content2.classList.add("slideDown");
+
+            setTimeout(function(){
+                content2.style.display = "none";
+                content2.classList.remove("slideDown");
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

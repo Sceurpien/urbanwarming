@@ -31,7 +31,7 @@ namespace UW.Authentication.Logics
                 user.Salt = UwLogics.RandomString(20);
                 user.Name = userName;
                 user.Email = email;
-                user.HashedPassword = Encoding.UTF8.GetString(UwLogics.Hash(password, user.Salt));
+                user.HashedPassword = Encoding.Unicode.GetString(UwLogics.Hash(password, user.Salt));
                 user.Created = DateTime.Now;
                 string id = DataAccess.AddUser(user).Result;
                 return id;

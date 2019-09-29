@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -15,6 +16,7 @@ namespace UW.API.AuthenticationControllers
     public class RegisterController : Controller
     {
         [HttpPost("[action]")]
+        [EnableCors("AllowOrigin")]
         public string Register([FromBody] RegisterModel model)
         {
             string result = UwLogics.Register(model.loginname, model.email, model.password);

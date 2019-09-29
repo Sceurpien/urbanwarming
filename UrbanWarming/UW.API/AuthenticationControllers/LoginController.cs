@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -15,9 +16,11 @@ namespace UW.API.AuthenticationControllers
     public class LoginController : Controller
     {
         [HttpPost("[action]")]
-        public string Login([FromBody] LoginModel model)
+        [EnableCors("AllowOrigin")]
+        public ActionResult Login([FromBody] LoginModel model)
         {
-            return JsonConvert.SerializeObject(UwLogics.Login(model.loginname, model.password));
+            var result = JsonConvert.SerializeObject(UwLogics.Login(model.loginname, model.password));
+            return Ok(result);
         }
     }
 }

@@ -20,19 +20,14 @@ namespace UW.API
             Configuration = configuration;
         }
 
-        readonly string UWSpecificOrigins = "_uwAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
+            services.AddCors(c =>
             {
-                options.AddPolicy(UWSpecificOrigins,
-                builder =>
-                {
-                    builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
-                });
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -41,6 +36,15 @@ namespace UW.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.Use(async (ctx, next) =>
+            {
+                await next();
+                if (ctx.Response.StatusCode == 204)
+                {
+                    ctx.Response.ContentLength = 0;
+                }
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -51,7 +55,7 @@ namespace UW.API
                 app.UseHsts();
             }
 
-            app.UseCors(UWSpecificOrigins);
+            app.UseCors("AllowOrigin");
             app.UseHttpsRedirection();
             app.UseMvc();
         }

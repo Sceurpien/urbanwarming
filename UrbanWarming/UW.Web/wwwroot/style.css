@@ -40,12 +40,12 @@ input[type=submit], button {
     padding: 10px;
     cursor: pointer;
 }
-
+select.ng-invalid,
 input.ng-invalid {
     border-color: #FF9F1C;
     background-color: #ffebd1;
 }
-
+select.ng-invalid.ng-dirty,
 input.ng-invalid.ng-dirty {
     border-color: #FE4A49;
     background-color: #fedada;

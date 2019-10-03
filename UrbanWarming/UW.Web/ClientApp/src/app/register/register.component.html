@@ -7,7 +7,7 @@
     </div>
     <div class="register-form">
       <h4 class="register-form-header">Register</h4>
-      <form (ngSubmit)="openSecondForm()" [formGroup]="registrationForm" *ngIf="formType == 'baseData'">
+      <form (ngSubmit)="openSecondForm()" [formGroup]="registrationForm" *ngIf="formType === 'baseData'">
         <div class="register-input-bracket">
           <input class="register-input" type="text" name="loginname" formControlName="loginname" ng-trim="false" placeholder="Login name" required />
         </div>
@@ -28,14 +28,18 @@
         </div>
       </form>
 
-      <form (ngSubmit)="onRegisterPost()"  [formGroup]="cityTypeForm" *ngIf="formType == 'cityType'">
+      <form (ngSubmit)="onRegisterPost()" [formGroup]="cityTypeForm" *ngIf="formType === 'cityType'">
         <div class="register-input-bracket">
-          <input class="register-input" type="text" name="cityType" formControlName="cityType" ng-trim="false" placeholder="Select city type" required />
+          <select class="form-control" id="cityType" required formControlName="cityType">
+            <option disabled selected [ngValue]="null">Choose city type</option>
+            <option *ngFor="let cityType of cityTypes" [ngValue]="cityType" >{{cityType.name}}</option>
+          </select>
         </div>
-
-        <div class="register-input-bracket">
-          <input class="register-input" type="submit" value="Register" [disabled]="!cityTypeForm.valid" />
-        </div>
+        <!-- TODO: show city type data  -->
+          <div class="register-input-bracket">
+            <button class="register-input" (click)="goToBaseForm()">Back</button>
+            <input class="register-input" type="submit" value="Register" [disabled]="!cityTypeForm.valid" />
+          </div>
       </form>
 
       <div class="register-input-bracket-text">

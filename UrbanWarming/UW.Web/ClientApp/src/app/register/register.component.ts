@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import * as jwt_decode from "jwt-decode";
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { PasswordValidation } from '../validators/password.validator';
+import { ICityType } from '../api/contracts/ICityType';
 
 interface IUserData {
   loginname: string;
@@ -29,6 +30,8 @@ export class RegisterComponent {
   public registrationForm: FormGroup;
   public cityTypeForm: FormGroup;
 
+  public cityTypes: ICityType[];
+
   constructor(@Inject('BASE_URL') baseUrl: string, private httpService: HttpClient, private route: ActivatedRoute, private fb: FormBuilder) {
     this.baseurl = baseUrl;
     this.formType = RegisterFormTypes.baseData;
@@ -37,6 +40,7 @@ export class RegisterComponent {
       window.location.href = baseUrl + 'city/';
 
     this.buildForms();
+      this.loadCityTypes();
   }
 
 
@@ -45,33 +49,31 @@ export class RegisterComponent {
 
     if (user.loginname && user.email && user.password === user.passwordConfirm) {
       this.formType = RegisterFormTypes.cityType;
+
     }
   }
 
+  public goToBaseForm(): void {
+    this.formType = RegisterFormTypes.baseData;
+  }
+
   public onRegisterPost() {
-    //this.err = false;
-    //let data = {
-    //  "loginname": this.loginname,
-    //  "email": this.email,
-    //  "password": this.password,
-    //  "passwordConfirm": this.passwordConfirm,
-    //  "citytype": this.citytype
-    //};
-    //let head = new HttpHeaders({
-    //  'Content-Type': 'application/json'
-    //});
-    //this.httpService.post<string>('api/Register/Register', JSON.stringify(data), { headers: head }).subscribe(result => {
-    //  if (result == "") {
-    //    this.err = true;
-    //  }
-    //  else {
-    //    localStorage.setItem('jwt', result);
-    //    let token = this.getDecodedAccessToken(result);
-    //    window.location.href = this.baseurl + 'home/';
-    //  }
-    //}, error => {
-    //  console.error(error)
-    //});
+    // TODO: refactor
+    const user: IUserData = this.registrationForm.value;
+    const cityTypeForm: ICityType = this.cityTypeForm.value;
+
+    user.cityType = this.cityTypeForm.value.cityType.id.toString();
+    const head = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    this.httpService.post<string>('api/register/register', JSON.stringify(user), { headers: head }).subscribe(result => {
+
+      localStorage.setItem('jwt', result);
+      let token = this.getDecodedAccessToken(result);
+      window.location.href = this.baseurl + 'city/';
+    }, error => {
+      console.error(error)
+    });
   }
 
   getDecodedAccessToken(token: string): any {
@@ -95,4 +97,18 @@ export class RegisterComponent {
       cityType: ['', [Validators.required]]
     });
   }
+
+  private loadCityTypes(): void {
+    // TODO: refactor
+    const head = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    this.httpService.get<ICityType[]>('api/CityType/GetAll', { headers: head }).subscribe(result  => {
+      this.cityTypes = result;
+    }, error => {
+      console.error(error)
+    });
+  }
+
 }

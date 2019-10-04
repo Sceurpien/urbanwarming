@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -15,6 +16,7 @@ namespace UW.API.AuthenticationControllers
     public class ForgotPasswordController : Controller
     {
         [HttpPost("[action]")]
+        [EnableCors("AllowOrigin")]
         public string ForgotPassword([FromBody] ForgotPasswordModel model)
         {
             try
@@ -29,6 +31,7 @@ namespace UW.API.AuthenticationControllers
         }
 
         [HttpPost("[action]")]
+        [EnableCors("AllowOrigin")]
         public string ResetPassword([FromBody] ResetPasswordModel model)
         {
             try

@@ -2,19 +2,60 @@ body {
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
     background-color: #f3fdff !important;
+    color: #454545;
 }
 
 a {
-    color: #aee239 !important;
+    color: #9fce34 !important;
     font-style: normal;
     cursor: pointer !important;
 }
 
-    a:hover {
-        color: #00a8c6 !important;
-        font-style: normal;
-        cursor: pointer !important;
-    }
+a:hover {
+    color: #8fb92f !important;
+    font-style: normal;
+    cursor: pointer !important;
+}
+
+a:visited {
+    color: #40c0cb;
+    font-style: normal;
+    cursor: pointer !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.15;
+    text-align: left;
+    color: #454545;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+h3 {
+    font-size: 22px;
+    font-weight: 500;
+}
+h4 {
+    font-size: 20px;
+    font-weight: 400;
+}
+h5 {
+    font-size: 16px;
+    font-weight: 400;
+}
+h6 {
+    font-size: 14px;
+    font-weight: 400;
+}
 
 input[type=text], input[type=number], input[type=password], select {
     height: 40px;
@@ -161,4 +202,20 @@ input.ng-invalid.ng-dirty {
 
 .register-form {
     padding: 20px;
+}
+
+.maincontainer {
+    margin-top: 10px;
+}
+
+.box {
+    background-color: #FFFFFF;
+    border-style: none;
+    border-color: #aee239;
+    border-top-style: solid;
+    border-width: 8px;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 50px;
+    padding: 5px;
 }

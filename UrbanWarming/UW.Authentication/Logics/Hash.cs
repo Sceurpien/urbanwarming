@@ -38,6 +38,7 @@ namespace UW.Authentication.Logics
                 passwordHash = Hash(password, comparesalt);
             passwordHash = Encoding.Unicode.GetBytes(Encoding.Unicode.GetString(passwordHash));
             var testpass = Encoding.Unicode.GetString(passwordHash);
+            var testpass2 = Encoding.Unicode.GetString(comparehash);
             return comparehash.SequenceEqual(passwordHash);
         }
 

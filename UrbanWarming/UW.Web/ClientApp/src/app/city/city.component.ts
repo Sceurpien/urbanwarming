@@ -9,8 +9,8 @@ import * as jwt_decode from "jwt-decode";
 })
 export class CityComponent {
   constructor(@Inject('BASE_URL') baseUrl: string) {
-    if (localStorage.getItem('jwt') == undefined)
-      window.location.href = baseUrl + 'login/';
+    //if (localStorage.getItem('jwt') == undefined)
+    //  window.location.href = baseUrl + 'login/';
 
 
   }

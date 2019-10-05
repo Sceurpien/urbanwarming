@@ -71,5 +71,6 @@
     <Build Include="Files\201909102109_GetCityByUserId.sql" />
     <Build Include="Files\201909122148_GetCitiesByUserId.sql" />
     <Build Include="Files\201909142311_TemplateCity.sql" />
+    <Build Include="Files\201910052337_Population.sql" />
   </ItemGroup>
 </Project>

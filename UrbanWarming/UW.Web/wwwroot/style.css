@@ -81,6 +81,16 @@ input[type=submit], button {
     padding: 10px;
     cursor: pointer;
 }
+select.ng-invalid,
+input.ng-invalid {
+    border-color: #FF9F1C;
+    background-color: #ffebd1;
+}
+select.ng-invalid.ng-dirty,
+input.ng-invalid.ng-dirty {
+    border-color: #FE4A49;
+    background-color: #fedada;
+}
 
 .content {
     padding-top: 120px;
@@ -94,15 +104,25 @@ input[type=submit], button {
     z-index: 10;
 }
 
-.login, .register {
+.login,
+.register {
     width: 320px;
-    height: 480px;
     margin: 50px auto;
     border-radius: 2px;
     box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
 }
 
+.register {
+    height: 570px;
+    position: relative;
+}
+
+.login {
+    height: 480px;
+}
+
+.register-header-image,
 .login-header-image {
     width: 320px;
     padding: 0px;
@@ -111,6 +131,7 @@ input[type=submit], button {
     cursor: default;
 }
 
+.register-header,
 .login-header {
     width: 320px;
     height: 160px;
@@ -121,6 +142,7 @@ input[type=submit], button {
     cursor: default;
 }
 
+.register-header-text,
 .login-header-text {
     width: 320px;
     height: 40px;
@@ -143,14 +165,43 @@ input[type=submit], button {
     padding: 20px;
 }
 
+.register-input-bracket {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.register-input-bracket-text,
 .login-input-bracket-text {
     width: 100%;
     padding: 5px;
     text-align: center;
 }
 
+.register-input-bracket-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.register-input,
 .login-input {
     width: 100%;
+}
+
+.register-form-header {
+    color: #D0D0D0;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    cursor: default;
+    z-index: 10 !important;
+    opacity: 1 !important;
+}
+
+.register-form {
+    padding: 20px;
 }
 
 .maincontainer {

@@ -11,7 +11,9 @@
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
@@ -29,7 +31,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\api\base.api.ts" />
     <None Remove="ClientApp\src\app\api\contracts\ICityType.ts" />
+    <None Remove="ClientApp\src\app\api\contracts\IRegisterModel.ts" />
+    <None Remove="ClientApp\src\app\api\registration.api.ts" />
+    <None Remove="ClientApp\src\app\register\model\register-form-state.model.ts" />
+    <None Remove="ClientApp\src\app\service\authentication.service.ts" />
     <None Remove="ClientApp\src\app\validators\password.validator.ts" />
   </ItemGroup>
 
@@ -43,6 +50,11 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\api\contracts\ICityType.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\api\base.api.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\api\contracts\IRegisterModel.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\api\registration.api.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\register\model\register-form-state.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\authentication.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\validators\password.validator.ts" />
   </ItemGroup>
 

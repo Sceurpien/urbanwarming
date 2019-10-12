@@ -6,8 +6,8 @@
       <div class="register-header-text">Urban Warming</div>
     </div>
     <div class="register-form">
-      <h4 class="register-form-header">Register</h4>
-      <form (ngSubmit)="openSecondForm()" [formGroup]="registrationForm" *ngIf="formType === 'baseData'">
+      <form (ngSubmit)="openSecondForm()" [formGroup]="registrationForm" *ngIf="formState === 'baseData'">
+        <h4 class="register-form-header">Register</h4>
         <div class="register-input-bracket">
           <input class="register-input" type="text" name="loginname" formControlName="loginname" ng-trim="false" placeholder="Login name" required />
         </div>
@@ -28,18 +28,32 @@
         </div>
       </form>
 
-      <form (ngSubmit)="onRegisterPost()" [formGroup]="cityTypeForm" *ngIf="formType === 'cityType'">
+      <form (ngSubmit)="onRegisterPost()" [formGroup]="cityTypeForm" *ngIf="formState === 'cityType'">
+        <div class="citytype-back-button" (click)="goToBaseForm()"><fa-icon [icon]="faAngleLeft"></fa-icon> back</div>
+        <h4 class="register-form-citytype-header">Choose your city</h4>
         <div class="register-input-bracket">
           <select class="form-control" id="cityType" required formControlName="cityType">
             <option disabled selected [ngValue]="null">Choose city type</option>
-            <option *ngFor="let cityType of cityTypes" [ngValue]="cityType" >{{cityType.name}}</option>
+            <option *ngFor="let cityType of cityTypes" [ngValue]="cityType">{{cityType.name}}</option>
           </select>
         </div>
-        <!-- TODO: show city type data  -->
-          <div class="register-input-bracket">
-            <button class="register-input" (click)="goToBaseForm()">Back</button>
-            <input class="register-input" type="submit" value="Register" [disabled]="!cityTypeForm.valid" />
-          </div>
+        <div class="citytype-difficulty-bracket">
+          <span>Difficulty: </span>
+          <span class="citytype-difficulty-{{cityTypeForm.get('cityType').value.difficulty && cityTypeForm.get('cityType').value.difficulty.toLowerCase()}}">
+            {{cityTypeForm.get('cityType').value.difficulty}}
+          </span>
+          <span class="citytype-icon" title="Sea connection" *ngIf="cityTypeForm.get('cityType').value.seaConnection"><fa-icon [icon]="faAnchor"></fa-icon></span>
+          <span class="citytype-icon" title="Road connection" *ngIf="cityTypeForm.get('cityType').value.roadConnection"><fa-icon [icon]="faRoad"></fa-icon></span>
+        </div>
+
+        <div class="citytype-description-bracket">
+          <h2 class="sub-header">Description</h2>
+          <div class="citytype-description">{{cityTypeForm.get('cityType').value.description}}</div>
+        </div>
+
+        <div class="register-input-bracket">
+          <input class="register-input" type="submit" value="Register" [disabled]="!cityTypeForm.valid || saving" />
+        </div>
       </form>
 
       <div class="register-input-bracket-text">

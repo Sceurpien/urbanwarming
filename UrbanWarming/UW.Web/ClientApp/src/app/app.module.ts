@@ -20,6 +20,12 @@ import { BaseComponent } from './base/base.component';
 import { CityComponent } from './city/city.component';
 import { ForgotPasswordComponent } from './fpass/fpass.component';
 import { ResetPasswordComponent } from './rpass/rpass.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { CityTypeApi } from './api/citytype.api';
+import { RegistrationApi } from './api/registration.api';
+
+import { AuthenticationService } from './service/authentication.service';
 
 @NgModule({
   declarations: [
@@ -43,6 +49,7 @@ import { ResetPasswordComponent } from './rpass/rpass.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
     RouterModule.forRoot([
       { path: '', component: BaseComponent, pathMatch: 'full' },
       { path: 'home', component: HomeComponent},
@@ -70,7 +77,11 @@ import { ResetPasswordComponent } from './rpass/rpass.component';
       provide: HTTP_INTERCEPTORS,
       useClass: ApiUrlInterceptor,
       multi: true
-    },],
+    },
+    CityTypeApi,
+    RegistrationApi,
+    AuthenticationService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

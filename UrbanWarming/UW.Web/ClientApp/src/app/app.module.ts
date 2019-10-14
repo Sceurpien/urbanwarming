@@ -21,6 +21,7 @@ import { CityComponent } from './city/city.component';
 import { ForgotPasswordComponent } from './fpass/fpass.component';
 import { ResetPasswordComponent } from './rpass/rpass.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CityTabsComponent } from './city/citytabs/citytabs.component';
 
 import { CityTypeApi } from './api/citytype.api';
 import { RegistrationApi } from './api/registration.api';
@@ -34,6 +35,7 @@ import { AuthenticationService } from './service/authentication.service';
     BaseComponent,
     HomeComponent,
     CityComponent,
+    CityTabsComponent,
 
     LoginComponent,
     RegisterComponent,

@@ -5,7 +5,7 @@ import { ICityType } from '../api/contracts/ICityType';
 import { faAngleLeft, faAnchor, faRoad } from '@fortawesome/free-solid-svg-icons';
 import { CityTypeApi } from '../api/citytype.api';
 import { IRegisterModel } from '../api/contracts/IRegisterModel';
-import { RegisterFormState } from './model/register-form-state.model';
+import { RegisterFormState } from './model/registerFormState';
 import { AuthenticationService } from '../service/authentication.service';
 
 @Component({

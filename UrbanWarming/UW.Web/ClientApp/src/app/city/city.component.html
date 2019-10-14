@@ -5,6 +5,8 @@
     </div>
     <div class="col-sm-6">
       <div class="box">Center Box</div>
+      <citytab [activeTab]="activeTab" (onTabSelection)="onTabSelection($event)" >
+      </citytab>
     </div>
     <div class="col-sm-3">
       <div class="box">Right Box</div>

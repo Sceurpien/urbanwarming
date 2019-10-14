@@ -4,6 +4,7 @@ import { CityTab } from './model/cityTab';
 @Component({
   selector: 'city',
   templateUrl: './city.component.html',
+  styleUrls: ['./city.component.css']
 })
 
 export class CityComponent {

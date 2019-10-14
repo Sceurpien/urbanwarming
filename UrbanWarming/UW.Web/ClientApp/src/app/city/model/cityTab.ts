@@ -4,7 +4,7 @@ export enum CityTab {
   industry = "industry",
   services = "services",
   tourism = "tourism",
-  financial = "financial",
+  finance = "finance",
   energy = "energy",
   policies = "policies"
 }

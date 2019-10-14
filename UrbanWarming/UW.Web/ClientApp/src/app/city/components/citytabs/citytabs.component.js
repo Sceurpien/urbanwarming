@@ -34,7 +34,8 @@ var CityTabsComponent = /** @class */ (function () {
     CityTabsComponent = __decorate([
         core_1.Component({
             selector: 'citytab',
-            templateUrl: './citytab.component.html'
+            templateUrl: './citytabs.component.html',
+            styleUrls: ['./citytabs-component.css']
         })
     ], CityTabsComponent);
     return CityTabsComponent;

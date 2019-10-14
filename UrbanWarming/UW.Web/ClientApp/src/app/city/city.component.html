@@ -4,9 +4,19 @@
       <div class="box">Left Box</div>
     </div>
     <div class="col-sm-6">
-      <div class="box">Center Box</div>
-      <citytab [activeTab]="activeTab" (onTabSelection)="onTabSelection($event)" >
-      </citytab>
+      <div class="box">
+        <div class="city-tab-detail">
+          <base-tab [hidden]="activeTab !== 'base'"></base-tab>
+          <population-tab [hidden]="activeTab !== 'population'"></population-tab>
+          <industry-tab [hidden]="activeTab !== 'industry'"></industry-tab>
+          <services-tab [hidden]="activeTab !== 'services'"></services-tab>
+          <tourism-tab [hidden]="activeTab !== 'tourism'"></tourism-tab>
+          <finance-tab [hidden]="activeTab !== 'finance'"></finance-tab>
+          <energy-tab [hidden]="activeTab !== 'energy'"></energy-tab>
+          <policies-tab [hidden]="activeTab !== 'policies'"></policies-tab>
+        </div>
+        <citytab [activeTab]="activeTab" (onTabSelection)="onTabSelection($event)"></citytab>
+      </div>
     </div>
     <div class="col-sm-3">
       <div class="box">Right Box</div>

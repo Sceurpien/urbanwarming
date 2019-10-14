@@ -7,7 +7,7 @@ var CityTab;
     CityTab["industry"] = "industry";
     CityTab["services"] = "services";
     CityTab["tourism"] = "tourism";
-    CityTab["financial"] = "financial";
+    CityTab["finance"] = "financial";
     CityTab["energy"] = "energy";
     CityTab["policies"] = "policies";
 })(CityTab = exports.CityTab || (exports.CityTab = {}));

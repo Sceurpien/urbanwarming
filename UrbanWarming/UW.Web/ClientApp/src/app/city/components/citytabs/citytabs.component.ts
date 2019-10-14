@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CityTab } from '../model/cityTab';
+import { CityTab } from '../../model/cityTab';
 import { faMapMarkedAlt, faUsers, faIndustry, faSeedling, faHiking, faDollarSign, faLightbulb, faScroll } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'citytab',
-  templateUrl: './citytab.component.html'
+  templateUrl: './citytabs.component.html',
+  styleUrls: ['./citytabs-component.css']
 })
 
 export class CityTabsComponent {

@@ -1,0 +1,14 @@
+.city-tab-container {
+  text-align: center;
+}
+
+.city-tab-item {
+  margin: 18px;
+  font-size: 20px;
+  color: #00a8c6;
+  cursor: pointer;
+}
+
+.city-tab-selected {
+  color: #aee239;
+}

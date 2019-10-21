@@ -12,7 +12,9 @@ namespace UW.BusinessLogic.Logics
             try
             {
                 UWDataAccess da = new UWDataAccess();
-                return da.GetCityMap(cityId).Select(r=> new CityMapDTO(r));
+                IEnumerable<CityMapDTO> cityMap = da.GetCityMap(cityId).Select(r=> new CityMapDTO(r));
+
+                return cityMap.OrderBy(c => c.XCoordinate).ThenBy(c => c.YCoordinate);
             }
             catch
             {

@@ -1,88 +1,71 @@
 import { Component, Inject } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
-import * as jwt_decode from "jwt-decode";
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { PasswordValidation } from '../validators/password.validator';
 import { ICityType } from '../api/contracts/ICityType';
-
-interface IUserData {
-  loginname: string;
-  email: string;
-  password: string;
-  passwordConfirm: string;
-  cityType: string;
-}
-
-enum RegisterFormTypes {
-  baseData = "baseData",
-  cityType = "cityType"
-}
+import { faAngleLeft, faAnchor, faRoad } from '@fortawesome/free-solid-svg-icons';
+import { CityTypeApi } from '../api/citytype.api';
+import { IRegisterModel } from '../api/contracts/IRegisterModel';
+import { RegisterFormState } from './model/registerFormState';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
 })
 export class RegisterComponent {
+  public faAngleLeft = faAngleLeft;
+  public faAnchor = faAnchor;
+  public faRoad = faRoad;
+
   public baseurl: string;
-  public formType: RegisterFormTypes;
+  public formState: RegisterFormState;
+  public saving: boolean;
 
   public registrationForm: FormGroup;
   public cityTypeForm: FormGroup;
 
   public cityTypes: ICityType[];
 
-  constructor(@Inject('BASE_URL') baseUrl: string, private httpService: HttpClient, private route: ActivatedRoute, private fb: FormBuilder) {
+  constructor(
+    @Inject('BASE_URL') baseUrl: string,
+    private fb: FormBuilder,
+    private cityTypeApi: CityTypeApi,
+    private authenticationService: AuthenticationService) {
     this.baseurl = baseUrl;
-    this.formType = RegisterFormTypes.baseData;
 
     if (localStorage.getItem('jwt') != undefined)
       window.location.href = baseUrl + 'city/';
 
-    this.buildForms();
-      this.loadCityTypes();
+    this.initialize();
   }
 
-
   public openSecondForm(): void {
-    const user: IUserData = this.registrationForm.value;
+    const model: IRegisterModel = this.registrationForm.value;
 
-    if (user.loginname && user.email && user.password === user.passwordConfirm) {
-      this.formType = RegisterFormTypes.cityType;
-
+    if (model.loginname && model.email && model.password === model.passwordConfirm) {
+      this.formState = RegisterFormState.cityType;
     }
   }
 
   public goToBaseForm(): void {
-    this.formType = RegisterFormTypes.baseData;
+    this.formState = RegisterFormState.baseData;
   }
 
   public onRegisterPost() {
-    // TODO: refactor
-    const user: IUserData = this.registrationForm.value;
-    const cityTypeForm: ICityType = this.cityTypeForm.value;
+    const model: IRegisterModel = this.registrationForm.value;
 
-    user.cityType = this.cityTypeForm.value.cityType.id.toString();
-    const head = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-    this.httpService.post<string>('api/register/register', JSON.stringify(user), { headers: head }).subscribe(result => {
+    model.cityType = this.cityTypeForm.value.cityType.id.toString();
 
-      localStorage.setItem('jwt', result);
-      let token = this.getDecodedAccessToken(result);
-      window.location.href = this.baseurl + 'city/';
-    }, error => {
-      console.error(error)
-    });
+    this.authenticationService.registerUser(model);
+    this.saving = true;
   }
 
-  getDecodedAccessToken(token: string): any {
-    try {
-      return jwt_decode(token);
-    }
-    catch (Error) {
-      return null;
-    }
+  private initialize(): void {
+    this.formState = RegisterFormState.baseData;
+    this.saving = false;
+
+    this.buildForms();
+    this.loadCityTypes();
   }
 
   private buildForms(): void {
@@ -99,16 +82,8 @@ export class RegisterComponent {
   }
 
   private loadCityTypes(): void {
-    // TODO: refactor
-    const head = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-
-    this.httpService.get<ICityType[]>('api/CityType/GetAll', { headers: head }).subscribe(result  => {
+    this.cityTypeApi.getAllCityTypes().subscribe(result => {
       this.cityTypes = result;
-    }, error => {
-      console.error(error)
     });
   }
-
 }

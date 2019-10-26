@@ -14,6 +14,18 @@
         public int SocialServices { get; set; }
         public int OtherServices { get; set; }
         public int Entertainment { get; set; }
+
+        public int AgricultureTax { get; set; }
+        public int MiningTax { get; set; }
+        public int ConstructionTax { get; set; }
+        public int ManufacturingTax { get; set; }
+        public int TradeAndWarehousingTax { get; set; }
+        public int InformationTechnologyTax { get; set; }
+        public int FinanceAndInsuranceTax { get; set; }
+        public int SocialServicesTax { get; set; }
+        public int OtherServicesTax { get; set; }
+        public int EntertainmentTax { get; set; }
+
         public CityIndustry(int id, int mapid, int[] values)
         {
             CityId = id;
@@ -28,6 +40,16 @@
             SocialServices = values[7];
             OtherServices = values[8];
             Entertainment = values[9];
+            AgricultureTax = values[10];
+            MiningTax = values[11];
+            ConstructionTax = values[12];
+            ManufacturingTax = values[13];
+            TradeAndWarehousingTax = values[14];
+            InformationTechnologyTax = values[15];
+            FinanceAndInsuranceTax = values[16];
+            SocialServicesTax = values[17];
+            OtherServicesTax = values[18];
+            EntertainmentTax = values[19];
         }
     }
 }

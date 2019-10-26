@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using UW.DataAccess.Entities;
 
 namespace UW.DataAccess.DAL
 {
     public partial class UWDataAccess
     {
-        public CityPopulation GetCityPopulation()
+        public CityPopulation GetCityPopulation(int cityId)
         {
             try
             {
-                DataTable dt = base.GetDataTable("sp_GetCityPopulation", null);
+                List<SqlParameter> parameters = new List<SqlParameter>();
+                parameters.Add(new SqlParameter("CityId", cityId));
+
+                DataTable dt = base.GetDataTable("sp_GetCityPopulation", parameters);
 
                 return ConvertDataRowToCityPopulation(dt.Rows[0]);
             }

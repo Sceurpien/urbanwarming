@@ -75,5 +75,6 @@
     <Build Include="Files\201910072132_Industry.sql" />
     <Build Include="Files\201910172208_GetCityMap.sql" />
     <Build Include="Files\201910262254_TourismServicesFinancial.sql" />
+    <Build Include="Files\201911010237_Buildings.sql" />
   </ItemGroup>
 </Project>

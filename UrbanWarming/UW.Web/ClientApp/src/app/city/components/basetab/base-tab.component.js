@@ -8,12 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var BaseTabComponent = /** @class */ (function () {
-    function BaseTabComponent() {
+    function BaseTabComponent(cityMapApi) {
+        this.cityMapApi = cityMapApi;
     }
+    BaseTabComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.cityMapApi.getCityMap(1).subscribe(function (response) {
+            _this.cityMap = response;
+        });
+    };
     BaseTabComponent = __decorate([
         core_1.Component({
             selector: 'base-tab',
             templateUrl: './base-tab.component.html',
+            styleUrls: ['./base-tab.component.css']
         })
     ], BaseTabComponent);
     return BaseTabComponent;

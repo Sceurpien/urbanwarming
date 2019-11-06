@@ -32,6 +32,8 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\api\base.api.ts" />
+    <None Remove="ClientApp\src\app\api\citymap.api.ts" />
+    <None Remove="ClientApp\src\app\api\contracts\ICityMap.ts" />
     <None Remove="ClientApp\src\app\api\contracts\ICityType.ts" />
     <None Remove="ClientApp\src\app\api\contracts\IRegisterModel.ts" />
     <None Remove="ClientApp\src\app\api\registration.api.ts" />
@@ -59,6 +61,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\api\citymap.api.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\api\contracts\ICityMap.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\api\contracts\ICityType.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\api\base.api.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\api\contracts\IRegisterModel.ts" />

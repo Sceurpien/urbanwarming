@@ -32,6 +32,7 @@ import { ServicesTabComponent } from './city/components/servicestab/services-tab
 import { TourismTabComponent } from './city/components/tourismtab/tourism-tab.component';
 
 import { CityTypeApi } from './api/citytype.api';
+import { CityMapApi } from './api/citymap.api';
 import { RegistrationApi } from './api/registration.api';
 
 import { AuthenticationService } from './service/authentication.service';
@@ -97,6 +98,7 @@ import { AuthenticationService } from './service/authentication.service';
       multi: true
     },
     CityTypeApi,
+    CityMapApi,
     RegistrationApi,
     AuthenticationService,
   ],

@@ -1,0 +1,70 @@
+.city-map-container {
+  padding: 12px;
+}
+
+.city-map-row {
+  margin-bottom: 3px;
+}
+
+.city-map-item {
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  margin-right: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.sea {
+  background-color: deepskyblue;
+}
+
+.sandybeach {
+  background-color: forestgreen;
+}
+
+.grassbeach {
+  background-color: darkslategray;
+}
+
+.cliffbeach {
+  background-color: darkcyan;
+}
+
+.plains {
+  background-color: darkolivegreen;
+}
+
+.riverbank {
+  background-color: darkred;
+}
+
+.smallhills {
+  background-color: brown;
+}
+
+.sand {
+  background-color: purple;
+}
+
+.dunes {
+  background-color: orange;
+}
+
+.lakearea {
+  background-color: aqua;
+}
+
+.hills {
+  background-color: fuchsia;
+}
+
+.mountain {
+  background-color: dimgrey;
+}
+
+.valley {
+  background-color: yellow;
+}
+
+

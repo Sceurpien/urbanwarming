@@ -1,7 +1,7 @@
 import { HttpHeaders } from "@angular/common/http";
 
 export abstract class ApiBase {
-
+  // TODO: refactor
   //constructor(private client: HttpClient) { }
 
   //public getMany(url: string): Observable<T[]> {

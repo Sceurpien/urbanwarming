@@ -72,8 +72,7 @@ namespace UW.DataAccess.DAL
                 Convert.ToInt32(row["XCoordinate"].ToString()),
                 Convert.ToInt32(row["YCoordinate"].ToString()),
                 row["Name"].ToString(),
-                Convert.ToInt32(row["Level"].ToString()),
-                null
+                Convert.ToInt32(row["Level"].ToString())
             );
 
             return city;

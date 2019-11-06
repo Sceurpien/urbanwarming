@@ -5,7 +5,6 @@ namespace UW.BusinessLogic.DTOs
     public class CityMapDTO
     {
         public int Id { get; set; }
-        public CityDTO City { get; set; }
         public CityMapTypeDTO CityMapType { get; set; }
         public CityMapZoneDTO CityMapZone { get; set; }
         public int XCoordinate { get; set; }
@@ -22,8 +21,6 @@ namespace UW.BusinessLogic.DTOs
             YCoordinate = cityMap.YCoordinate;
             Name = cityMap.Name;
             Level = cityMap.Level;
-            City = cityMap.City != null ? new CityDTO(cityMap.City) : null;
         }
-
     }
 }

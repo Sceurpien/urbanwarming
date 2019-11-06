@@ -4,6 +4,7 @@ var http_1 = require("@angular/common/http");
 var ApiBase = /** @class */ (function () {
     function ApiBase() {
     }
+    // TODO: refactor
     //constructor(private client: HttpClient) { }
     //public getMany(url: string): Observable<T[]> {
     //  const header = this.createHeader();

@@ -1,1 +1,8 @@
-<div>base tab</div>
+<div class="tab-title">base tab</div>
+<div class="city-map-container">
+
+  <div *ngFor="let row of cityMapRows" class="city-map-row">
+    <div *ngFor="let cityMap of row.cityMaps" class="city-map-item {{cityMap.cityMapType.fictionalName.toLowerCase()}}" title="{{cityMap.xCoordinate}}:{{cityMap.yCoordinate}}">
+    </div>
+  </div>
+</div>

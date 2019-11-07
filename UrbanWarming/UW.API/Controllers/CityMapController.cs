@@ -11,9 +11,9 @@ namespace UW.API.Controllers
     {
         [Route("{id}")]
         [HttpGet]
-        public IEnumerable<CityMapDTO> GetCityMap(int cityId)
+        public IEnumerable<CityMapRow> GetCityMap(int id)
         {
-            IEnumerable<CityMapDTO> cityMap = CityLogics.GetCityMap(cityId);
+            IEnumerable<CityMapRow> cityMap = CityLogics.GetCityMap(id);
 
             return cityMap;
         }
